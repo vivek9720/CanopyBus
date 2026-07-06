@@ -1,0 +1,17 @@
+# west bench deployment
+facility west-01 West Bench
+device 1 gateway 1 gw-west basil_seed_000 temp humidity co2
+device 2 climate 1 climate-a lettuce_veg_042 temp humidity co2 cal=2
+device 3 valve 1 valve-a lettuce_veg_042 flow
+device 4 pump 2 nutrient-a tomato_fruit_071 ec ph flow
+link 1 2 observes 7
+link 1 3 controls 5
+link 3 4 backup 2
+window 1 360 720 22 1 morning-mist
+window 2 720 1080 18 2 nutrient-feed
+sample 2 temp 1000 21,61,480 22,62,510 23,64,530
+sample 4 ec 1100 800,58,12 810,59,14
+journal 1000 boot 1 1 gateway online
+journal 1060 config 2 2 profile loaded
+rule balance 0x01 0x05 0x21 0x10 0x30 0x01 0x02 0x31 0x32 0xff
+note seed bundle for greenhouse reconciliation

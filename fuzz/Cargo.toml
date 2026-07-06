@@ -1,0 +1,54 @@
+[package]
+name = "canopybus-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+canopybus = { path = ".." }
+libfuzzer-sys = { path = "libfuzzer-sys" }
+
+[workspace]
+
+[profile.release]
+debug = 1
+overflow-checks = true
+panic = "abort"
+
+[[bin]]
+name = "bundle_fuzzer"
+path = "fuzz_targets/bundle_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "stream_fuzzer"
+path = "fuzz_targets/stream_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "page_fuzzer"
+path = "fuzz_targets/page_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "rules_fuzzer"
+path = "fuzz_targets/rules_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "journal_fuzzer"
+path = "fuzz_targets/journal_fuzzer.rs"
+test = false
+doc = false
+bench = false

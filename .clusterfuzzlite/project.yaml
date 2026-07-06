@@ -1,0 +1,12 @@
+language: rust
+main_repo: CanopyBus
+fuzzing_engines:
+  - libfuzzer
+sanitizers:
+  - address
+fuzz_targets:
+  - bundle_fuzzer
+  - stream_fuzzer
+  - page_fuzzer
+  - rules_fuzzer
+  - journal_fuzzer

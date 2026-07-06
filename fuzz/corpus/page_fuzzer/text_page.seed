@@ -1,0 +1,2 @@
+device 2 climate 1 climate-a lettuce_veg_042 temp humidity co2
+sample 2 temp 1000 21,61,480 22,62,510 23,64,530

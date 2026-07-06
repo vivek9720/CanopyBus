@@ -1,0 +1,6 @@
+/target/
+/fuzz/target/
+/out/
+crash-*
+timeout-*
+*.profraw
